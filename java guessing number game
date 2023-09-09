@@ -1,0 +1,48 @@
+package weekeight;
+
+import java.util.Scanner;
+
+public class WeekEight
+{
+// int myRandInt = (int)(Math.random()*100+1);
+    
+    public static void main(String[] args) 
+    {
+          int computerNumber = 0;
+        int guess = 0;
+        int numGuesses = 0;
+        boolean found = false;
+        
+        Scanner in = new Scanner(System.in);
+        computerNumber = (int)(Math.random()*100+1000);
+        System.out.println("I've thought of a number between 1 and 100000.");
+
+        while(!found)
+        {
+            numGuesses++;
+            System.out.print("Enter your guess:  ");
+            guess = Integer.parseInt(in.nextLine());
+            
+            if (guess < computerNumber)
+            {
+                    System.out.println("My number is larger"); 
+            }
+            
+            else if (guess > computerNumber) 
+            {
+                System.out.println("My number is smaller");   
+                    
+               }     
+            else 
+            {
+                found = true;
+            }
+        }
+        System.out.println("Correct!");
+        
+        if(numGuesses < 5) System.out.println("Well done!");
+        else if(numGuesses < 10) System.out.println("Okay.");
+        else System.out.println("Need practice.");
+    }
+    
+}
